@@ -99,10 +99,10 @@ jobs:
         name: managedSolutions
         path: ${{ inputs.solution_shipping_folder}}/
 
-  release-to-staging:
+  release-to-prod:
     needs: [ convert-to-managed ]
     runs-on: windows-latest
-    environment: ${{inputs.build_env}} 
+    environment: ${{inputs.prod_env}} 
     env:
       RUNNER_DEBUG: 1
       ENVIRONMENT_URL: ${{secrets.ENVIRONMENT_URL}}
